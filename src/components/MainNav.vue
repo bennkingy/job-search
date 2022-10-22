@@ -21,19 +21,28 @@
             </li>
           </ul>
         </nav>
+        <div class="flex items-center h-full ml-auto">
+          <ProfileImage v-if="isLoggedIn" />
+          <ActionButton v-else />
+        </div>
       </div>
     </div>
   </header>
 </template>
 
 <script>
+import ActionButton from "@/components/ActionButton.vue";
+import ProfileImage from "@/components/ProfileImage.vue";
+
 export default {
   name: "MainNav",
+  components: { ActionButton, ProfileImage },
   data() {
     return {
       company: "Company",
       url: "www.google.com",
       menuItems: ["Teams", "Locations", "Jobs"],
+      isLoggedIn: false,
     };
   },
 };
