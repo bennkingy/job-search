@@ -1,12 +1,14 @@
 <template>
-  <div class="justify-center flex bg-yellow-300 items-center h-screen">
-    <h1 class="mt-8 text-6xl">Hello</h1>
+  <div class="justify-center flex items-center h-screen">
+    <MainNav />
   </div>
 </template>
 
 <script>
+import MainNav from "@/components/MainNav.vue";
+
 export default {
   name: "App",
-  components: {},
+  components: { MainNav },
 };
 </script>
