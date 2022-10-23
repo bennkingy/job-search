@@ -1,7 +1,6 @@
 import ActionButton from "@/components/ActionButton";
 import MainNav from "@/components/MainNav";
 import ProfileImage from "@/components/ProfileImage";
-
 import { mount } from "@vue/test-utils";
 
 describe("main navigation", () => {
