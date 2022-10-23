@@ -1,10 +1,10 @@
 import ActionButton from "@/components/ActionButton";
 import MainNav from "@/components/MainNav";
 import ProfileImage from "@/components/ProfileImage";
-import { mount } from "@vue/test-utils";
+import { shallowMount } from "@vue/test-utils";
 
 describe("main navigation", () => {
-  const wrapper = mount(MainNav);
+  const wrapper = shallowMount(MainNav);
   it("displays company name", () => {
     expect(wrapper.text()).toMatch("Company");
   });
