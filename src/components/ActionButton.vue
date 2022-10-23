@@ -5,7 +5,17 @@
 <script>
 export default {
   name: "ActionButton",
-  props: ["text", "type"],
+  props: {
+    text: { type: String, required: true, default: "text" },
+    type: {
+      type: String,
+      required: true,
+      default: "secondary",
+      validator(value) {
+        return ["primary", "secondary"].includes(value);
+      },
+    },
+  },
   computed: {
     buttonClass() {
       return {
