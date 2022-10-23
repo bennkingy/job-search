@@ -27,11 +27,12 @@
             v-else
             text="Sign in"
             type="secondary"
+            data-test="login-button"
             @click="loginUser"
           />
         </div>
       </div>
-      <SubNav v-if="isLoggedIn" />
+      <SubNav v-if="isLoggedIn" data-test="sub-nav" />
     </div>
   </header>
 </template>

@@ -1,6 +1,6 @@
 import ActionButton from "@/components/ActionButton";
 import MainNav from "@/components/MainNav";
-import ProfileImage from "@/components/ProfileImage";
+import ProfileImage from "@/components/ProfileImage.vue";
 import { shallowMount } from "@vue/test-utils";
 
 describe("main navigation", () => {
@@ -22,8 +22,19 @@ describe("main navigation", () => {
   it("displays users profile image when users logs in", async () => {
     const loginButton = wrapper.findComponent({ name: ActionButton.name });
     await loginButton.trigger("click");
+
     const profileImage = wrapper.findComponent({ name: ProfileImage.name });
     expect(loginButton.exists()).toBe(false);
     expect(profileImage.exists()).toBe(true);
+  });
+  it("displays subnav with additional info", async () => {
+    let subNav = wrapper.find("[data-test='sub-nav']");
+    expect(subNav.exists()).toBe(false);
+
+    const loginButton = wrapper.find("[data-test='login-button']");
+    await loginButton.trigger("click");
+
+    subNav = wrapper.find("[data-test='sub-nav']");
+    expect(subNav.exists()).toBe(true);
   });
 });
