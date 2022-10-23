@@ -1,9 +1,10 @@
-import ProfileImage from "@/components/ProfileImage";
-import { shallowMount } from "@vue/test-utils";
+import ProfileImage from "@/components/ProfileImage.vue";
+import { mount } from "@vue/test-utils";
 
 describe("ProfileImage", () => {
   it("renders", () => {
-    const wrapper = shallowMount(ProfileImage);
-    expect(wrapper.exists()).toBe(true);
+    const wrapper = mount(ProfileImage);
+    const image = wrapper.find("[data-test='profile-image']");
+    expect(image.attributes("src")).toBe(wrapper.vm.imageLink);
   });
 });

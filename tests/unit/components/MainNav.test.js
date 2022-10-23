@@ -28,6 +28,7 @@ describe("main navigation", () => {
     expect(profileImage.exists()).toBe(true);
   });
   it("displays subnav with additional info", async () => {
+    const wrapper = shallowMount(MainNav);
     let subNav = wrapper.find("[data-test='sub-nav']");
     expect(subNav.exists()).toBe(false);
 
