@@ -1,10 +1,10 @@
-import Subnav from "@/components/Subnav";
+import SubNav from "@/components/SubNav";
 import { mount } from "@vue/test-utils";
 
-describe("Subnav", () => {
+describe("SubNav", () => {
   describe("when user is on job page", () => {
     it("displays job count", () => {
-      const wrapper = mount(Subnav, {
+      const wrapper = mount(SubNav, {
         global: {
           stubs: {
             FontAwesomeIcon: true,
@@ -22,7 +22,7 @@ describe("Subnav", () => {
   });
   describe("when user is not on jobs page", () => {
     it("does NOT display job count", () => {
-      const wrapper = mount(Subnav, {
+      const wrapper = mount(SubNav, {
         global: {
           stubs: {
             FontAwesomeIcon: true,

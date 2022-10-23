@@ -4,6 +4,7 @@
     :src="imageLink"
     class="w-8 h-8 object-contain"
     alt=""
+    data-test="profile-image"
   />
 </template>
 
