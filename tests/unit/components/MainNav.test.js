@@ -15,27 +15,14 @@ describe("main navigation", () => {
     expect(navigationMenuTexts).toEqual(["Teams", "Locations", "Jobs"]);
   });
   it("promts user to log in when logged out", () => {
-    const wrapper = mount(MainNav, {
-      data() {
-        return {
-          isLoggedIn: false,
-        };
-      },
-    });
     const loginButton = wrapper.findComponent({ name: ActionButton.name });
     const profileImage = wrapper.findComponent({ name: ProfileImage.name });
     expect(loginButton.exists()).toBe(true);
     expect(profileImage.exists()).toBe(false);
   });
-  it("displays users profile image when logged in", () => {
-    const wrapper = mount(MainNav, {
-      data() {
-        return {
-          isLoggedIn: true,
-        };
-      },
-    });
+  it("displays users profile image when users logs in", async () => {
     const loginButton = wrapper.findComponent({ name: ActionButton.name });
+    await loginButton.trigger("click");
     const profileImage = wrapper.findComponent({ name: ProfileImage.name });
     expect(loginButton.exists()).toBe(false);
     expect(profileImage.exists()).toBe(true);
