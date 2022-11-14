@@ -1,14 +1,16 @@
 <template>
-  <div class="justify-center flex items-center h-screen">
+  <div>
     <MainNav />
+    <Hero />
   </div>
 </template>
 
 <script>
-import MainNav from "@/components/MainNav.vue";
+import Hero from "@/components/Hero";
+import MainNav from "@/components/MainNav";
 
 export default {
   name: "App",
-  components: { MainNav },
+  components: { MainNav, Hero },
 };
 </script>
